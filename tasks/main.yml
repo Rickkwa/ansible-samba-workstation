@@ -1,0 +1,21 @@
+---
+
+- name: Install Samba
+  package:
+    name: samba
+    state: present
+  when: not ansible_check_mode
+
+- name: Send over samba configuration file
+  template:
+    src: smb.conf.j2
+    dest: /etc/samba/smb.conf
+    mode: 0644
+  notify:
+    - restart samba
+
+- name: Start and enable samba
+  service:
+    name: smbd
+    state: started
+    enabled: true

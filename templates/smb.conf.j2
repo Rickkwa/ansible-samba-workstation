@@ -1,0 +1,15 @@
+[global]
+    load printers = no
+    printing = bsd
+    printcap name = /dev/null
+    disable spoolss = yes
+    map to guest = bad user
+
+[public]
+    force user = {{ smb_force_user }}
+    path = {{ smb_path }}
+    guest ok = yes
+    writeable = yes
+    browseable = yes
+    create mask = {{ smb_create_mask }}
+    directory mask = {{ smb_directory_mask }}
