@@ -1,6 +1,8 @@
 ---
 
-smb_force_user: "root"
-smb_path: "/"
-smb_create_mask: "0755"
-smb_directory_mask: "0755"
+smb_config_sections:
+  - name: public
+    force_user: root
+    path: /
+    create_mask: 0755
+    directory_mask: 0755

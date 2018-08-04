@@ -5,11 +5,14 @@
     disable spoolss = yes
     map to guest = bad user
 
-[public]
-    force user = {{ smb_force_user }}
-    path = {{ smb_path }}
-    guest ok = yes
-    writeable = yes
-    browseable = yes
-    create mask = {{ smb_create_mask }}
-    directory mask = {{ smb_directory_mask }}
+{% for config in smb_config_sections %}
+[{{ config.name }}]
+    force user = {{ config.force_user }}
+    path = {{ config.path }}
+    create mask = {{ config.create_mask | default('0755') }}
+    directory mask = {{ config.directory_mask | default('0755') }}
+    guest ok = {{ config.guest_ok | default('yes') }}
+    writeable = {{ config.guest_ok | default('yes') }}
+    browseable = {{ config.guest_ok | default('yes') }}
+
+{% endfor %}
