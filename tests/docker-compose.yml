@@ -8,3 +8,10 @@ services:
     privileged: true
     ports:
       - "2200:22"
+
+  ubuntu16:
+    build:
+      context: ./environments
+      dockerfile: ubuntu.Dockerfile
+    ports:
+      - "2201:22"
