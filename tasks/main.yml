@@ -6,6 +6,11 @@
     state: present
   when: not ansible_check_mode
 
+- name: Reload systemd
+  systemd:
+    daemon_reload: yes
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
 - name: Send over samba configuration file
   template:
     src: smb.conf.j2
