@@ -16,7 +16,7 @@ Accessing files from your remote workstation/VM has never been so easy! Simply r
 The `smb_config_sections` variable found in `defaults/main.yml` is a list of dicts where each item in the list contains the following structure:
 
 |Field|Required|Description|
-|---|---|---|---|
+|---|---|---|
 |name|yes|The name of the section in the configuration.|
 |path|yes|The value corresponding to the `path` configuration option in the current section.|
 |force_user|yes|The value corresponding to the `force user` configuration option in the current section.|
