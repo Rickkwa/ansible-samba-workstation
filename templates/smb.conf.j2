@@ -12,7 +12,7 @@
     create mask = {{ config.create_mask | default('0755') }}
     directory mask = {{ config.directory_mask | default('0755') }}
     guest ok = {{ config.guest_ok | default('yes') }}
-    writeable = {{ config.guest_ok | default('yes') }}
-    browseable = {{ config.guest_ok | default('yes') }}
+    writeable = {{ config.writeable | default('yes') }}
+    browseable = {{ config.browseable | default('yes') }}
 
 {% endfor %}
