@@ -25,8 +25,14 @@ The `smb_config_sections` variable found in `defaults/main.yml` is a list of dic
 
 The default value of `smb_config_sections` exposes the entire filesystem of the remote host under the `public` endpoint.
 
-## Example
-
 ## Creating the Mount
 
+### Windows
+
+### Linux
+
+### Mac
+
 ## License
+
+MIT. See [LICENSE](LICENSE.md) for more information.
