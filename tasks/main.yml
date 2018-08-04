@@ -16,6 +16,7 @@
 
 - name: Enable samba
   service:
+    name: smbd
     enabled: true
 
 - name: Start service
