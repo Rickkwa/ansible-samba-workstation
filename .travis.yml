@@ -6,6 +6,7 @@ language: python
 python: 3.6
 
 env:
+  - ANSIBLE_VER=2.5.2 TESTINFRA_VER=1.14.0
   - ANSIBLE_VER=2.6.1 TESTINFRA_VER=1.14.0
 
 sudo: true
@@ -21,7 +22,7 @@ services:
 before_install:
   - docker-compose -f tests/docker-compose.yml build
   - sudo mkdir -p /etc/ansible/roles
-  - sudo ln -s $TRAVIS_BUILD_DIR /etc/ansible/roles/user_management
+  - sudo ln -s $TRAVIS_BUILD_DIR /etc/ansible/roles/samba-workstation
   - sudo cp -f $TRAVIS_BUILD_DIR/tests/inventory /etc/ansible/hosts
   # Set host_key_checking = false
   - echo "W2RlZmF1bHRzXQ0KaG9zdF9rZXlfY2hlY2tpbmcgPSBmYWxzZQ==" | base64 -d > ~/.ansible.cfg
@@ -29,8 +30,8 @@ before_install:
 install:
   - sudo apt-get install sshpass
   - pip install pytest
-  - pip install ansible==$ANSIBLE_VER
-  - pip install testinfra==$TESTINFRA_VER
+  - pip install ansible==2.6.1
+  - pip install testinfra==1.14.0
 
 script:
   - docker-compose -f tests/docker-compose.yml up -d &> /dev/null
