@@ -1,0 +1,2 @@
+[containers]
+centos7 ansible_port=2201 ansible_host=127.0.0.1 ansible_user=root ansible_ssh_pass=hunter2

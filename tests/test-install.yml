@@ -1,0 +1,7 @@
+---
+
+- hosts: containers
+  tasks:
+    - name: Run role
+      import_role:
+        name: samba-workstation

@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  centos7:
+    build:
+      context: ./environments
+      dockerfile: centos-7.Dockerfile
+    ports:
+      - "2200:22"
